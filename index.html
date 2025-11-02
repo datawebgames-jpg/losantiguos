@@ -4,213 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Los Antiguos - Servidor Conan Exiles</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/332/332665.png" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Cinzel', serif;
-      color: #f5e6c4;
-      text-align: center;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.85), rgba(0,0,0,1)),
-                  url('https://wallpapercave.com/wp/wp8906092.jpg') no-repeat center center/cover;
-      animation: backgroundMove 60s linear infinite;
-      overflow-x: hidden;
-    }
-
-    @keyframes backgroundMove {
-      from { background-position: center; }
-      to { background-position: center 1000px; }
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 25px 0;
-      font-size: 2.4em;
-      letter-spacing: 3px;
-      color: #d4af37;
-      text-shadow: 0 0 20px #000;
-      animation: titleGlow 2s infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      from { text-shadow: 0 0 10px #000; }
-      to { text-shadow: 0 0 25px #d4af37; }
-    }
-
-    .container {
-      max-width: 950px;
-      margin: 60px auto;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 25px;
-      padding: 40px;
-      box-shadow: 0 0 30px #000;
-      backdrop-filter: blur(3px);
-    }
-
-    h2 {
-      color: #d4af37;
-      margin-bottom: 15px;
-      text-shadow: 0 0 10px #000;
-      letter-spacing: 2px;
-    }
-
-    p {
-      font-size: 1.15em;
-      line-height: 1.7em;
-      margin-bottom: 25px;
-    }
-
-    .stats {
-      text-align: left;
-      margin: 0 auto;
-      max-width: 600px;
-      padding: 20px;
-      background: rgba(20, 20, 20, 0.7);
-      border-radius: 15px;
-      box-shadow: 0 0 15px #d4af37;
-    }
-
-    .stats ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1em;
-    }
-
-    .stats li {
-      margin-bottom: 10px;
-      padding-left: 25px;
-      background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat left center / 18px;
-    }
-
-    .connect-section {
-      position: relative;
-      margin-top: 40px;
-    }
-
-    .connect-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #b8860b, #ffcc00);
-      color: #000;
-      padding: 18px 50px;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 1.3em;
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 0 25px #d4af37;
-      animation: pulse 2.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #d4af37; }
-      50% { box-shadow: 0 0 35px #ffcc00; }
-      100% { box-shadow: 0 0 10px #d4af37; }
-    }
-
-    .connect-btn:hover {
-      transform: scale(1.07);
-      background: linear-gradient(90deg, #ffcc00, #ffd966);
-    }
-
-    .characters {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 60px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .characters img {
-      width: 210px;
-      height: auto;
-      filter: drop-shadow(0 0 10px #000);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .community {
-      margin-top: 60px;
-    }
-
-    .qr {
-      width: 140px;
-      margin-top: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #d4af37;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.7);
-      border-top: 2px solid #d4af37;
-    }
-
-    a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>🛡️ LOS ANTIGUOS 🗡️</header>
+  <div class="fondo">
+    <div class="overlay"></div>
 
-  <div class="container">
-    <h2>La Historia</h2>
-    <p>
-      En una isla olvidada por los dioses, los ecos de antiguas batallas resuenan entre montañas de piedra y fuego.
-      Guerreros y hechiceros buscan poder en los restos de civilizaciones caídas.  
-      <br><br>
-      Pero algo más despierta bajo la superficie… una oscuridad ancestral que reclama a todos los que osan desafiarla.  
-      Solo los más fuertes sobrevivirán para contar la historia de <strong>LOS ANTIGUOS</strong>.
-    </p>
+    <header>
+      <h1 class="titulo">Servidor <span>Los Antiguos</span></h1>
+      <p class="subtitulo">PvP / PvE - EEWA - Mods - NPC Teleport exclusivo</p>
+    </header>
 
-    <h2>Estadísticas del Servidor</h2>
-    <div class="stats">
+    <section class="historia">
+      <h2>📜 Historia del servidor</h2>
+      <p>
+        En una isla olvidada por los dioses, el eco de los Antiguos resuena entre las ruinas.
+        Aquellos que buscan el poder prohibido del EEWA deben enfrentarse a criaturas olvidadas y desafíos más allá de la muerte.
+        La sangre, el acero y el valor decidirán quién domina el nuevo mundo.  
+        ¿Serás tú quien reclame el trono perdido?
+      </p>
+    </section>
+
+    <section class="stats">
+      <h2>⚔️ Características del servidor</h2>
       <ul>
-        <li>⚔️ Experiencia x5</li>
-        <li>🏹 Varios mods seleccionados</li>
-        <li>🧙‍♂️ EEWA instalado</li>
-        <li>🗺️ NPC Teleport exclusivo del servidor</li>
-        <li>🏰 PvP y PvE balanceado</li>
-        <li>🌄 Nueva isla llena de desafíos y misterios</li>
+        <li>🔥 Experiencia x5</li>
+        <li>🧩 Múltiples mods optimizados</li>
+        <li>⚙️ EEWA y los mejores complementos</li>
+        <li>🌀 NPC Teleport creado para el servidor</li>
+        <li>💀 Nuevos y terroríficos monstruos</li>
+        <li>🌍 PvP / PvE balanceado</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="connect-section">
-      <div class="characters">
-        <img src="https://i.imgur.com/2pqPYoN.png" alt="Guerrero con espada y escudo LA" />
-        <a class="connect-btn" href="steam://connect/190.11.113.54:7783">⚔️ Conectarse al servidor ⚔️</a>
-        <img src="https://i.imgur.com/vi9UhAo.png" alt="Guerrera con espada y escudo LA" />
+    <section class="conexion">
+      <div class="personaje izquierda">
+        <img src="assets/personaje_masculino.png" alt="Guerrero Los Antiguos" />
       </div>
-    </div>
 
-    <div class="community">
-      <h2>Únete a la Comunidad</h2>
-      <p>Conéctate con otros jugadores, comparte tus aventuras y descubre los secretos del mundo de <strong>Los Antiguos</strong>:</p>
-      <a href="https://discord.gg/t7pZVVP8B3" target="_blank">
-        <img src="qr_discord.png" alt="QR Discord" class="qr">
-      </a>
-      <p><a href="https://www.facebook.com/DatawebGames" target="_blank">Facebook - Dataweb Games</a></p>
-    </div>
+      <div class="boton-conexion">
+        <h2>⚔️ Conectarse al servidor</h2>
+        <a href="steam://connect/190.11.113.54:7783" class="btn">Entrar ahora</a>
+        <div class="escudo">
+          <img src="assets/escudo_LA.png" alt="Escudo Los Antiguos" />
+        </div>
+      </div>
+
+      <div class="personaje derecha">
+        <img src="assets/personaje_femenino.png" alt="Guerrera Los Antiguos" />
+      </div>
+    </section>
+
+    <section class="comunidad">
+      <h2>🤝 Conéctate a la comunidad</h2>
+      <img src="assets/qr_discord.png" alt="QR Discord" class="qr" />
+      <p>Únete a nuestro Discord o Facebook para estar al día con los eventos, mods y novedades.</p>
+      <div class="links">
+        <a href="https://discord.gg/t7pZVVP8B3" target="_blank">Discord</a>
+        <a href="https://www.facebook.com/DatawebGames" target="_blank">Facebook</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Los Antiguos - Servidor Conan Exiles</p>
+    </footer>
   </div>
 
-  <footer>
-    © 2025 Los Antiguos | Servidor Conan Exiles
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

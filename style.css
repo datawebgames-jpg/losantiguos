@@ -104,3 +104,18 @@ header, section, footer {
 .links a:hover {
   background: #c52d2d;
 }
+.escudo {
+  margin-top: 1.5rem;
+  animation: sangrado 2.5s infinite ease-in-out alternate;
+}
+
+.escudo img {
+  width: 120px;
+  filter: drop-shadow(0 0 15px #800);
+}
+
+@keyframes sangrado {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(3px) rotate(1deg); filter: drop-shadow(0 0 25px #f00); }
+}
+
