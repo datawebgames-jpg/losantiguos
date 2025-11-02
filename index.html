@@ -1,179 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOS ANTIGUOS - Servidor Conan Exiles</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Antiguos - Servidor Conan Exiles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
+    /* --- ESTILOS GENERALES --- */
     body {
       margin: 0;
       font-family: 'Cinzel', serif;
-      background: radial-gradient(circle at center, #1a0000, #000);
-      color: #fff;
-      text-align: center;
+      background: radial-gradient(circle at center, #0b0000 0%, #000 100%);
       overflow-x: hidden;
+      color: #fff;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.8);
-      border-bottom: 2px solid #660000;
-      padding: 30px 10px;
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid #770000;
+      box-shadow: 0 0 25px rgba(255,0,0,0.3);
     }
 
-    h1 {
-      font-size: 3em;
+    header h1 {
       color: #ff0000;
-      text-shadow: 3px 3px 10px #000;
-      letter-spacing: 3px;
+      font-size: 3em;
+      text-shadow: 0 0 15px #a30000, 0 0 30px #000;
+      margin: 0;
     }
 
-    .server-status {
-      margin-top: 40px;
-      padding: 20px;
-      background: rgba(40, 0, 0, 0.8);
-      border: 2px solid #550000;
-      border-radius: 10px;
+    main {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255,0,0,0.4);
+    }
+
+    h2 {
+      color: #ff4d4d;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    p, li {
+      color: #ddd;
+      line-height: 1.6em;
+    }
+
+    ul {
+      text-align: left;
       display: inline-block;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+      margin: 20px 0;
     }
 
-    #status {
-      color: #ff5555;
-      font-size: 1.4em;
-      margin-top: 10px;
-    }
-
-    #players {
-      color: #fff;
-      font-size: 1.2em;
-      margin-top: 8px;
-    }
-
-    /* 🔥 Botón de conexión */
     .connect-btn {
       display: inline-block;
       background: linear-gradient(90deg, #5a0a0a, #9b1111);
       color: #fff;
-      font-family: 'Cinzel', serif;
       font-size: 1.3em;
-      font-weight: bold;
       padding: 15px 35px;
       border-radius: 12px;
       text-decoration: none;
       border: 2px solid #a30000;
       text-shadow: 2px 2px 5px #000;
-      box-shadow: 0 0 20px rgba(255,0,0,0.6);
+      box-shadow: 0 0 25px rgba(255,0,0,0.7);
       transition: all 0.2s ease-in-out;
-      margin-top: 25px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 5;
     }
 
     .connect-btn:hover {
-      transform: scale(1.07);
+      transform: scale(1.1);
       background: linear-gradient(90deg, #8b0000, #ff0000);
-      box-shadow: 0 0 30px rgba(255,0,0,0.9);
-    }
-
-    .social {
-      margin-top: 50px;
-    }
-
-    .social a {
-      margin: 0 20px;
-      color: #ff0000;
-      font-size: 1.3em;
-      text-decoration: none;
-      text-shadow: 2px 2px 8px #000;
+      box-shadow: 0 0 40px rgba(255,0,0,1);
     }
 
     footer {
-      margin-top: 70px;
-      padding: 20px;
       background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      text-align: center;
       border-top: 2px solid #660000;
-      color: #aaa;
+      margin-top: 50px;
+      position: relative;
+      z-index: 3;
     }
 
-    img.qr {
-      margin-top: 20px;
+    a.social {
+      color: #ff4444;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-size: 1.2em;
+      transition: color 0.3s;
+    }
+
+    a.social:hover {
+      color: #fff;
+    }
+
+    footer img {
+      margin-top: 15px;
       width: 160px;
-      border: 2px solid #a30000;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,0,0,0.4);
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>LOS ANTIGUOS</h1>
-    <p>Servidor PvP/PvE • Experiencia x5 • EEWA • Teleport propio • Mods exclusivos</p>
-  </header>
-
-  <section class="server-status">
-    <h2>Estado del servidor</h2>
-    <div id="status">Verificando...</div>
-    <div id="players">Jugadores conectados: ...</div>
-
-    <!-- ⚔️ BOTÓN PARA CONECTARSE -->
-    <a href="steam://connect/190.11.113.54:7783" id="connectBtn" class="connect-btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/5969/5969057.png" alt="Conan Icon"
-        style="height:28px; vertical-align:middle; margin-right:10px;">
-      Conectarse al servidor
-    </a>
-  </section>
-
-  <section class="social">
-    <h2>Conéctate con la comunidad</h2>
-    <a href="https://www.facebook.com/DatawebGames" target="_blank">Facebook</a>
-    <a href="https://discord.gg/t7pZVVP8B3" target="_blank">Discord</a>
-    <br>
-    <img src="frame.png" alt="QR Discord" class="qr">
-  </section>
-
-  <footer>
-    <p>© 2025 LOS ANTIGUOS • EEWA y Teleport creado para el servidor • Conan Exiles</p>
-  </footer>
-
-  <script>
-    // 🔍 Estado del servidor
-    async function checkServer() {
-      try {
-        const response = await fetch('/api/server-status');
-        const data = await response.json();
-
-        const statusEl = document.getElementById('status');
-        const playersEl = document.getElementById('players');
-        const connectBtn = document.getElementById('connectBtn');
-
-        if (data.online) {
-          statusEl.innerHTML = '🟢 Servidor Online';
-          playersEl.innerHTML = '👥 Jugadores conectados: ' + data.players;
-
-          // 💬 Actualiza el texto del botón
-          if (data.players > 0) {
-            connectBtn.innerHTML = `🎮 Entrar (${data.players} jugadores online)`;
-          } else {
-            connectBtn.innerHTML = `🎮 Entrar (Servidor vacío)`;
-          }
-
-        } else {
-          statusEl.innerHTML = '🔴 Servidor Offline';
-          playersEl.innerHTML = 'Jugadores conectados: 0';
-          connectBtn.innerHTML = '❌ Servidor offline';
-        }
-      } catch (error) {
-        document.getElementById('status').innerHTML = '⚠️ Error al verificar el servidor';
-        document.getElementById('players').innerHTML = 'Jugadores conectados: No disponible';
-      }
+      box-shadow: 0 0 20px rgba(255,0,0,0.5);
     }
 
-    checkServer();
-    setInterval(checkServer, 30000); // Actualiza cada 30 segundos
-  </script>
-</body>
-</html>
+    /* --- EFECTOS VISUALES --- */
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/2hxkVFm/fog.png') repeat;
+      opacity: 0.15;
+      animation: fogMove 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fogMove {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
+
+    .fire {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255,100,0,0.4) 0%, rgba(255,0,0,0.2) 40%, rgba(0,0,0,0) 80%);
+      anima
 
 
 
