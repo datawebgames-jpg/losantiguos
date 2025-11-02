@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.fondo {
+  position: relative;
+  background: url('https://i.ibb.co/wCSnwtb/conan-bg.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  animation: fondoAnim 25s linear infinite;
+}
+
+@keyframes fondoAnim {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(0.8); }
+  100% { filter: brightness(1); }
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+header, section, footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1rem;
+}
+
+.titulo span {
+  color: #c52d2d;
+  text-shadow: 0 0 10px #b00;
+}
+
+.stats ul {
+  list-style: none;
+  padding: 0;
+}
+.stats li {
+  margin: 0.5rem 0;
+}
+
+.boton-conexion {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.btn {
+  display: inline-block;
+  background: #c52d2d;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s;
+}
+.btn:hover {
+  background: #a62121;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff0000aa;
+}
+
+.personaje {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+}
+.personaje img {
+  width: 100%;
+  animation: movimiento 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 20px #000);
+}
+
+@keyframes movimiento {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.qr {
+  width: 180px;
+  margin-top: 1rem;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.links a:hover {
+  background: #c52d2d;
+}
