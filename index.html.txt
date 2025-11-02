@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servidor privado de Conan Exiles. Los Antiguos: experiencia única con mods, x5, EEWA y NPC Teleport.">
+    <meta name="keywords" content="Conan Exiles, servidor, mods, EEWA, x5, Los Antiguos, teleport, PvP, PvE">
+    <title>LOS ANTIGUOS - Conan Exiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1d1d1d;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        .features, .history, .contact {
+            margin-bottom: 30px;
+        }
+        .features ul, .history ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features li, .history li {
+            padding: 8px;
+            background-color: #333;
+            margin-bottom: 8px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #1d1d1d;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #bbb;
+        }
+        a {
+            color: #1e90ff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LOS ANTIGUOS - Conan Exiles</h1>
+    <p>Servidor PvP/PvE con mods exclusivos, historia épica y una experiencia mejorada.</p>
+</header>
+
+<div class="content">
+    <section class="features">
+        <h2>Características del servidor</h2>
+        <ul>
+            <li>Experiencia x5</li>
+            <li>Mods exclusivos, incluyendo EEWA</li>
+            <li>NPC Teleport personalizado</li>
+            <li>Nuevos monstruos y una isla llena de retos</li>
+            <li>Servidor 24/7, sin caídas ni interrupciones</li>
+        </ul>
+    </section>
+
+    <section class="history">
+        <h2>La Historia de Los Antiguos</h2>
+        <p>En un mundo olvidado, antiguos héroes y criaturas míticas luchan por la supremacía. Los guardianes del pasado buscan el regreso de su civilización perdida, mientras los jugadores enfrentan nuevos horrores y desafíos.</p>
+        <p>Con cada nuevo amanecer, las fuerzas oscuras resurgen, trayendo consigo monstruos nunca antes vistos y desafíos mortales. ¿Estás listo para enfrentarlos y reclamar tu lugar entre los antiguos?</p>
+    </section>
+
+    <section class="contact">
+        <h2>Contacto y Redes Sociales</h2>
+        <p>Si tienes preguntas o deseas unirte a nuestra comunidad, ¡contáctanos en nuestras redes sociales!</p>
+        <p><strong>Facebook:</strong> <a href="https://facebook.com/losantiguos" target="_blank">/LosAntiguosConanExiles</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/losantiguos" target="_blank">/LosAntiguosConan</a></p>
+        <p><strong>Discord:</strong> <a href="https://discord.gg/losantiguos" target="_blank">Unirse a nuestro servidor de Discord</a></p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 LOS ANTIGUOS - Conan Exiles | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

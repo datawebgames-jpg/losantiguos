@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOS ANTIGUOS - Conan Exiles</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      background: radial-gradient(circle at center, #3a0000, #000000 80%);
+      color: #f5f5f5;
+      text-align: center;
+    }
+    h1 {
+      font-size: 4em;
+      text-transform: uppercase;
+      color: #ff3b3b;
+      text-shadow: 3px 3px 10px #000;
+      margin-top: 30px;
+    }
+    .logo {
+      font-size: 3em;
+      color: #ff0000;
+      text-shadow: 3px 3px 10px #000;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .section {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+    .status {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    .status.online {
+      color: #00ff00;
+    }
+    .status.offline {
+      color: #ff0000;
+    }
+    .description {
+      font-size: 1.2em;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .qr-container img {
+      width: 180px;
+      height: 180px;
+      border: 3px solid #ff0000;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    }
+    a {
+      color: #ff5050;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>LOS ANTIGUOS</h1>
+  <div class="logo">LA</div>
+
+  <div class="section">
+    <p class="description">
+      🌋 Experiencia x5 • Varios mods<br>
+      ⚔️ EEWA y los mejores mods del juego<br>
+      🧭 NPC Teleport creado para el servidor
+    </p>
+    <p class="description">
+      Bienvenido a un mundo lleno de misterio y desafíos,<br>
+      donde los hombres y mujeres portan escudos marcados con las letras sangrantes “LA”.<br>
+      ¡Descubre nuevos monstruos del EEWA y conquista la isla de LOS ANTIGUOS!
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="status" id="serverStatus">Cargando estado del servidor...</div>
+    <div class="description">Jugadores conectados: <span id="playersCount">Cargando...</span></div>
+  </div>
+
+  <div class="section qr-container">
+    <h2>Conéctate a nuestro Discord</h2>
+    <img src="frame.png" alt="QR para Discord">
+    <p><a href="https://discord.gg/t7pZVVP8B3" target="_blank">Entrar al Discord</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Síguenos en nuestras redes</h2>
+    <p>
+      <a href="https://www.facebook.com/DatawebGames" target="_blank">Facebook</a> |
+      <a href="https://discord.gg/t7pZVVP8B3" target="_blank">Discord</a>
+    </p>
+  </div>
+
+  <script>
+    async function actualizarEstado() {
+      try {
+        const response = await fetch('/status');
+        const data = await response.json();
+        const statusElement = document.getElementById('serverStatus');
+        const playersCountElement = document.getElementById('playersCount');
+
+        if (data.status === 'online') {
+          statusElement.textContent = 'Servidor ONLINE';
+          statusElement.classList.add('online');
+        } else {
+          statusElement.textContent = 'Servidor OFFLINE';
+          statusElement.classList.add('offline');
+        }
+        playersCountElement.textContent = data.players;
+      } catch {
+        document.getElementById('serverStatus').textContent = 'Error al verificar el servidor';
+        document.getElementById('playersCount').textContent = 'No disponible';
+      }
+    }
+    actualizarEstado();
+  </script>
+</body>
+</html>
+
+

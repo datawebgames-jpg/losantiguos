@@ -1,0 +1,13 @@
+{
+  "name": "los-antiguos",
+  "version": "1.0.0",
+  "description": "Servidor web de Conan Exiles Los Antiguos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "gamedig": "^4.0.6"
+  }
+}
